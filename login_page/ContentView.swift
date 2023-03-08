@@ -8,88 +8,108 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var username: String = ""
-       @State private var password: String = ""
+    
+    @State var isTapped = false
+    @State private var email:String = ""
+    @State private var password:String = ""
     @Environment(\.openURL) var openURL
     var body: some View {
-       
-
-        ZStack{
-            VStack {
-                
-               
-                Image("girl").resizable().aspectRatio(contentMode:.fit).padding(.bottom).cornerRadius(15).foregroundColor(.black)
-                    
-                
-                Text("Login").font(.title).fontWeight(.bold).foregroundColor(.indigo).padding(.trailing,280)
-                
-//                Spacer(minLength: 20)
-                   
-                    
+        
+        VStack(alignment: .leading, spacing:15){
+            Spacer()
+            Image("girl").resizable().aspectRatio(contentMode: .fit)
+            Spacer()
+            Text("Login").font(.largeTitle).foregroundColor(.indigo).fontWeight(.bold).padding()
             
-                VStack{
-                    // 3. Email field
-//                    TextField("Email", text: $username).border(.linearGradient(<#T##gradient: Gradient##Gradient#>, startPoint: <#T##UnitPoint#>, endPoint: <#T##UnitPoint#>), width: <#T##CGFloat#>)
-
-                                // 4. Password field
-//                                SecureField("Password", text: $password)
-                    Form {
-                        Text("@").font(.title2)+Text(" Email ID")
-                    }.fontWeight(.light)
-                     Spacer(minLength: -1)
-                    Form {
-                        HStack{Text(Image(systemName: "lock")).fontWeight(.light)+Text(" Password").fontWeight(.light)
-                            Spacer()
-                            Text("[Forget?](https://example.com)").fontWeight(.bold)
-                        }
-                    }
+            //            Text Field 1
+            
+            VStack(alignment:.leading,content:{
+                HStack(spacing:15){
+                    
+                    // leading Icon
+                    Image(systemName: "envelope")
+                        .foregroundColor(Color.gray)
+                    
+                    
+                    TextField("Email", text: $email)
+                    
+                }
+                // if tapped
+                .padding(.top,isTapped ? 1:0)
+                
+                
+            })
+            .padding(.vertical,12)
+            .padding(.horizontal)
+            .background(Color.gray.opacity(0.1))
+            .cornerRadius(20)
+            
+            //            Text Field 2
+            VStack(alignment:.leading, content:{
+                HStack(){
+                    Image(systemName: "lock").foregroundColor(.gray)
+                    TextField("Password",text: $password)
+                    Button("Forgot?"){
+                        
+                    }.foregroundColor(.indigo).fontWeight(.bold)
                 }
                 
-                Button(action: {
-                        print("log in bin tapped")
-                }) {
-                    Text("Login")
-                      .frame(minWidth: 0, maxWidth: .infinity)
-                      .font(.system(size: 18))
-                      .padding()
-                      .foregroundColor(.white)
-                 }.background(Color.indigo)
-                  .cornerRadius(15)
-//                Button("Login") {
-//                    openURL(URL(string: "https://www.youtube.com")!)
-//
-//                }.background(Color.indigo).border(Color.purple, width: 0)
-                Text("Ok, login with...")
-                HStack{
-
-                    Button {
-                        print("Google button was tapped")
-                    } label: {
-                        Image("igoogle").resizable().aspectRatio(contentMode: .fill).frame(width: 50, height: 50)
-                    }
-                    Spacer()
-                    Button {
-                        print("Facebook button was tapped")
-                    } label: {
-                        Image("facebook").resizable().aspectRatio(contentMode: .fill).frame(width: 50, height: 50)
-                        
-                    }
-                    Spacer()
-                    Button {
-                        print("apple button was tapped")
-                    } label: {
-                        Image( "apple").resizable().aspectRatio(contentMode: .fill).frame(width: 50, height: 50)
-                    }
-                }.padding()
-                Text("New to iThickLogistics?")+Text("Register").foregroundColor(.blue)
-                    
-            }.padding()
+            }).padding(.vertical,12).padding(.horizontal).background(Color.gray.opacity(0.1)).cornerRadius(20)
             
-        }
-        
+            //            Button
+            
+            Button("Login"){
+                
+            }.foregroundColor(.black).padding(.vertical,15).frame(width: 360).background(.indigo).cornerRadius(15)
+            
+            //            Login with Text
+            HStack(alignment:.center){
+                Spacer()
+                Text("Or,login with...").foregroundColor(.gray).bold()
+                Spacer()
+            }
+            
+            //            Other Login Options
+            
+            HStack(alignment: .center, content:{
+                Spacer()
+                
+//                for google button
+                
+                Button(action:{}){
+                    Image("igoogle").resizable().frame(width: 30,height: 30).padding(.vertical,10).padding(.horizontal,30).background(RoundedRectangle(cornerRadius: 8.0).stroke(Color.gray.opacity(0.2)))
+                   
+                }
+                Spacer()
+                
+//                for facebook button
+                
+                Button(action:{}){
+                    Image("facebook").resizable().frame(width: 30,height: 30).padding(.vertical,10).padding(.horizontal,30).background(RoundedRectangle(cornerRadius: 8.0).stroke(Color.gray.opacity(0.2)))}
+                Spacer()
+                
+//                For apple button
+                Button(action:{}){
+                    Image("apple").resizable().frame(width: 30,height: 30).padding(.vertical,10).padding(.horizontal,30).background(RoundedRectangle(cornerRadius: 8.0).stroke(Color.gray.opacity(0.2)))}
+               
+                Spacer()
+                
+            })
+            
+            HStack{
+                Spacer()
+                Text("New to iThickLogistcs?").fontWeight(.bold).font(.custom("hey", size: 15))
+                Button("Register"){
+                    print("Hey")
+                    
+                }.fontWeight(.bold).foregroundColor(.indigo)
+                Spacer()
+            }
+            
+            
+        }.padding()
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
