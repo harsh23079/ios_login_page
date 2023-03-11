@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950F2C7529BB246C002F5FC9 /* whatWeDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950F2C7429BB246C002F5FC9 /* whatWeDo.swift */; };
 		953C5C4E29AE7F9400A13D60 /* login_pageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C5C4D29AE7F9400A13D60 /* login_pageApp.swift */; };
 		953C5C5029AE7F9400A13D60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C5C4F29AE7F9400A13D60 /* ContentView.swift */; };
 		953C5C5229AE7F9600A13D60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953C5C5129AE7F9600A13D60 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		950F2C7429BB246C002F5FC9 /* whatWeDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whatWeDo.swift; sourceTree = "<group>"; };
 		953C5C4A29AE7F9400A13D60 /* login_page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = login_page.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953C5C4D29AE7F9400A13D60 /* login_pageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login_pageApp.swift; sourceTree = "<group>"; };
 		953C5C4F29AE7F9400A13D60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				953C5C4D29AE7F9400A13D60 /* login_pageApp.swift */,
 				953C5C4F29AE7F9400A13D60 /* ContentView.swift */,
 				956B633929B76F7700BD2F91 /* signUp.swift */,
+				950F2C7429BB246C002F5FC9 /* whatWeDo.swift */,
 				953C5C5129AE7F9600A13D60 /* Assets.xcassets */,
 				953C5C5329AE7F9600A13D60 /* Preview Content */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950F2C7529BB246C002F5FC9 /* whatWeDo.swift in Sources */,
 				953C5C5029AE7F9400A13D60 /* ContentView.swift in Sources */,
 				953C5C4E29AE7F9400A13D60 /* login_pageApp.swift in Sources */,
 				956B633A29B76F7700BD2F91 /* signUp.swift in Sources */,

@@ -18,7 +18,7 @@ struct signUp: View {
             Spacer()
             HStack{
                 Spacer()
-                Image("signup").resizable().aspectRatio(contentMode: .fit).frame(width: 200,height: 250)
+                Image("signup").resizable().aspectRatio(contentMode: .fit).frame(width: 200,height: 200)
                 Spacer()
             }
            
@@ -108,7 +108,13 @@ struct signUp: View {
                 }.padding(.top,isTapped ? 1 : 0)
             }).padding(.vertical).padding(.horizontal,12).background(Color.gray.opacity(0.1)).cornerRadius(20)
         }
-            Spacer()
+            
+            HStack{
+                Spacer()
+                NavigationLink("Registered", destination: whatWeDo()).foregroundColor(.indigo).font(.title2)
+            }.padding(.top)
+          
+//            Spacer()
             
         }.padding()
     }
@@ -117,5 +123,6 @@ struct signUp: View {
 struct signUp_Previews: PreviewProvider {
     static var previews: some View {
         signUp()
+//        .previewDisplayName("iphone 10").previewLayout(.fixed(width: 200, height: 300)).previewDisplayName("")
     }
 }

@@ -9,10 +9,15 @@ import SwiftUI
 
 @main
 struct login_pageApp: App {
+    init(){
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor.systemIndigo]
+    }
     var body: some Scene {
+        
         WindowGroup {
-//            ContentView()
-            signUp()
+            ContentView()
+//            signUp()
+//            whatWeDo()
             
         }
     }
